@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Lifewood</title>
+    <!-- Links to your main stylesheet -->
+    <link rel="stylesheet" href="system/style.css"> 
+</head>
+<body>
+    <header>
+        <!-- Your navigation bar (e.g., links to home, etc.) -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Admin Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="application-form-section">
+            <h2>Job Application</h2>
+            <!-- CRITICAL: This ID must match the JS -->
+            <form id="application-form">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="degree">Degree:</label>
+                <input type="text" id="degree" name="degree" required>
+
+                <label for="project">Project Applying for:</label>
+                <select id="project" name="project" required>
+                    <option value="Data Annotator">Data Annotator</option>
+                    <option value="AI Training Specialist">AI Training Specialist</option>
+                    <option value="NLP Engineer">NLP Engineer</option>
+                </select>
+
+                <label for="experience">Relevant Job Experience:</label>
+                <textarea id="experience" name="experience" rows="4" required></textarea>
+
+                <label for="resumeLink">Resume Link (LinkedIn, etc.):</label>
+                <input type="url" id="resumeLink" name="resumeLink" required>
+
+                <label for="startTime">Available Start Time:</label>
+                <input type="time" id="startTime" name="startTime" required>
+
+                <label for="endTime">Available End Time:</label>
+                <input type="time" id="endTime" name="endTime" required>
+
+                <!-- CRITICAL: This ID must match the JS -->
+                <button type="submit" id="submit-btn">Submit Application</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- This script handles the submission. The path is correct. -->
+    <script type="module" src="system/apply.js"></script>
+</body>
+</html>

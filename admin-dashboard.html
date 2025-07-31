@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Lifewood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="robot.png">
+    <link rel="stylesheet" href="system/admin.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="logo.png" alt="Lifewood Logo" class="sidebar-logo-img">
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li id="nav-dashboard" class="active">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li id="nav-applications" class="has-submenu">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <span>Applications</span>
+                            <svg class="submenu-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="#" id="view-hired-link">Accepted Applicants</a></li>
+                            <li><a href="#" id="view-rejected-link">Rejected Applicants</a></li>
+                        </ul>
+                    </li>
+                    <!-- NEW: Scheduled Interview as a main menu item -->
+                    <li id="nav-scheduled">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            <span>Scheduled Interview</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="login.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Open Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <h1>Admin Panel</h1>
+                <div class="user-profile">
+                    <img src="admin1.jpeg" alt="Admin User">
+                    <span>Admin</span>
+                </div>
+            </header>
+            
+            <section class="dashboard-summary" id="dashboard-summary-section">
+                <div class="summary-card applicants" id="card-total-applicants">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                    <div class="card-text"><h3>Applicants</h3></div>
+                    <span class="notification-badge" id="badge-total">0</span>
+                </div>
+                <div class="summary-card accepted" id="card-accepted-applicants">
+                     <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg></div>
+                     <div class="card-text"><h3>Accepted Applicants</h3></div>
+                     <span class="notification-badge" id="badge-accepted">0</span>
+                </div>
+                <div class="summary-card rejected" id="card-rejected-applicants">
+                     <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="18" y1="8" x2="22" y2="12"></line><line x1="22" y1="8" x2="18" y2="12"></line></svg></div>
+                     <div class="card-text"><h3>Rejected Applicants</h3></div>
+                     <span class="notification-badge" id="badge-rejected">0</span>
+                </div>
+                <div class="summary-card scheduled" id="card-scheduled-interview">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+                    <div class="card-text"><h3>Scheduled Interview</h3></div>
+                    <span class="notification-badge" id="badge-scheduled">0</span>
+               </div>
+            </section>
+
+            <section class="content-panel" id="applications-content">
+                <div class="panel-header">
+                    <h2 id="panel-title">Job Applications</h2>
+                    <div class="panel-controls">
+                        <input type="text" id="search-input" placeholder="Search by name or email...">
+                        <select id="filter-project">
+                            <option value="all">All Projects</option>
+                            <option value="Data Annotator">Data Annotator</option>
+                            <option value="AI Training Specialist">AI Training Specialist</option>
+                            <option value="NLP Engineer">NLP Engineer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="applications-table">
+                        <thead>
+                            <tr>
+                                <th>Applicant Name</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                                <th>Degree</th>
+                                <th>Project Applied for</th>
+                                <th>Relevant Job Experience</th>
+                                <th>Resume Link</th>
+                                <th>Start of Available Time</th>
+                                <th>End of Available Time</th>
+                                <th>Actions</th> 
+                            </tr>
+                        </thead>
+                        <tbody id="applications-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div id="applicant-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modal-close-btn"></button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    
+    <script type="module" src="system/admin.js"></script>
+</body>
+</html>

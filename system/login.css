@@ -1,0 +1,175 @@
+/* =================================================================== */
+/*  1. BRAND GUIDELINES SETUP & VARIABLES
+/* =================================================================== */
+:root {
+    --font-body: 'Manrope', sans-serif;
+    --font-title: 'Manrope', sans-serif;
+    --color-paper: #f5eedb;
+    --color-dark-serpent: #133020;
+    --color-saffaron: #FFB347;
+    --color-saffaron-hover: #FFC370;
+    --color-castleton-green: #046241;
+    --color-white: #ffffff;
+    --color-sea-salt: #F9F7F7;
+    --color-danger: #D73A49;
+    --color-text-on-light: #133020;
+    --color-border-light: #e0d9c8;
+    --border-radius: 8px;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* =================================================================== */
+/*  2. GLOBAL & BODY STYLES
+/* =================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-color: var(--color-paper);
+    color: var(--color-text-on-light);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* =================================================================== */
+/*  3. LOGIN PAGE STYLES
+/* =================================================================== */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    background-color: var(--color-sea-salt);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+}
+
+.login-container h1 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--color-dark-serpent);
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    color: #5a6e62;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-on-light);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius);
+    transition: border-color var(--transition-speed);
+}
+.form-input::placeholder {
+    color: transparent;
+}
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-saffaron);
+}
+
+.form-label {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+    font-size: 1rem;
+    color: #798c80;
+    pointer-events: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    top: -10px;
+    left: 12px;
+    font-size: 0.8rem;
+    color: var(--color-castleton-green);
+    background-color: var(--color-sea-salt);
+    padding: 0 5px;
+}
+
+.submit-btn {
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-dark-serpent);
+    background-color: var(--color-saffaron);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color var(--transition-speed);
+}
+.submit-btn:hover:not(:disabled) {
+    background-color: var(--color-saffaron-hover);
+}
+.submit-btn:disabled {
+    background-color: #aebfc5;
+    cursor: not-allowed;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #798c80;
+    cursor: pointer;
+}
+.password-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.error-message {
+    color: var(--color-danger);
+    font-size: 0.8rem;
+    text-align: left;
+    margin-top: 5px;
+    display: none;
+}
+.form-group.error .form-input {
+    border-color: var(--color-danger);
+}
+.form-group.error .error-message {
+    display: block;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(20, 48, 32, 0.2);
+    border-top-color: var(--color-dark-serpent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Lifewood</title>
+    
+    <!-- Import the official brand font: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display.swap" rel="stylesheet">
+
+    <!-- ========================================================= -->
+    <!-- THE FIX: Add the link to your icon file here -->
+    <!-- ========================================================= -->
+    <link rel="icon" type="image/png" href="robot.png">
+
+    <!-- Link to the specific login stylesheet -->
+    <link rel="stylesheet" href="system/login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Admin Access</h1>
+        <p>Enter your credentials to access the dashboard.</p>
+        
+        <form id="login-form" class="login-form" novalidate>
+            <div class="form-group">
+                <input type="text" id="username" class="form-input" placeholder="Username" required>
+                <label for="username" class="form-label">Username</label>
+                <div class="error-message" id="username-error">Username is required.</div>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="password" class="form-input" placeholder="Password" required>
+                <label for="password" class="form-label">Password</label>
+                <button type="button" id="password-toggle" class="password-toggle">
+                    <!-- (SVG icons here) -->
+                </button>
+                <div class="error-message" id="password-error">Password is required.</div>
+            </div>
+            
+            <button type="submit" id="submit-btn" class="submit-btn">
+                <span class="btn-text">Sign In</span>
+                <div class="loader" style="display: none;"></div>
+            </button>
+        </form>
+    </div>
+
+    <script src="system/login.js"></script>
+
+</body>
+</html>

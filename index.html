@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifewood - AI Data Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="robot.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Manrope:wght@400;500;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <!-- This should link to your main stylesheet, located in the system folder -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+
+    <!-- Pop-up notification message, will be displayed after successful submission -->
+    <div id="success-notification" class="notification hidden">
+        <p>Your application has been submitted successfully!</p>
+        <button class="close-btn">×</button>
+    </div>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                      <img src="logo.png" alt="Lifewood Logo" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="language-selector-mobile">
+                    <ul class="language-dropdown">
+                        <li><a href="#" onclick="switchLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="switchLanguage('zh')">Chinese</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="header-right-controls">
+                <div class="language-selector-desktop">
+                    <button class="language-button">
+                        English <span class="dropdown-arrow-header">▼</span>
+                    </button>
+                    <ul class="language-dropdown">
+                        <li><a href="#" onclick="switchLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="switchLanguage('zh')">Chinese</a></li>
+                    </ul>
+                </div>
+                
+                <a href="login.html" class="login-icon" aria-label="Login"></a>
+
+                 <button class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="hero-video-bg">
+                 <video autoplay muted loop playsinline>
+                    <source src="intro-vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="animate-by-letter">AI DATA SERVICES</h1>
+                <p class="hero-tagline animate-by-letter"> TRANSFORMING DATA AT SCALE</p>
+                <button id="open-modal-btn" class="cta-button">Apply now</button>
+            </div>
+        </section>
+
+        <section id="about-lifewood">
+            <div class="container reveal">
+                <h2 class="section-title">Redefining AI Development</h2>
+                <p class="section-subtitle">Lifewood is a technology company redefining how artificial intelligence is trained, scaled, and made accessible across industries. By combining human insight with global infrastructure, Lifewood delivers secure and scalable AI data services. With operations in multiple countries and a diverse workforce, Lifewood ensures that machine learning systems reflect the complexity and richness of the real world.</p>
+            </div>
+        </section>
+
+        <section id="services-overview" style="background-color: #fff;">
+            <div class="container">
+                <h2 class="section-title reveal">Our AI Solutions</h2>
+                <p class="section-subtitle reveal">Comprehensive data services to power your most ambitious AI projects.</p>
+                <div class="services-grid reveal">
+                    <div class="service-card">
+                        <h3>Data Annotation & Labeling</h3>
+                        <p>High-quality, human-powered data annotation for computer vision and NLP with meticulous accuracy.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>AI Training at Scale</h3>
+                        <p>Leverage our global workforce and robust platform to train and validate your models at any scale.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Multilingual Data Services</h3>
+                        <p>Access diverse datasets and linguistic expertise from around the world for globally relevant AI.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Data Integrity & Governance</h3>
+                        <p>Ensure your AI is built on a foundation of secure, ethical, and compliant data practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="global-presence">
+             <div class="container">
+                <h2 class="section-title reveal">A Global Workforce</h2>
+                <p class="section-subtitle reveal">Our strategic hubs and diverse teams ensure cultural fluency, data security, and 24/7 operational excellence.</p>
+                <div class="presence-grid reveal">
+                    <div class="presence-card">
+                        <h4>North America</h4>
+                        <p>HQ & Innovation Lab</p>
+                    </div>
+                    <div class="presence-card">
+                        <h4>Europe</h4>
+                        <p>Data Governance & Security Hub</p>
+                    </div>
+                    <div class="presence-card">
+                        <h4>Asia-Pacific</h4>
+                        <p>Large-Scale Operations Center</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trust-impact" style="background-color: #fff;">
+            <div class="container">
+                <h2 class="section-title reveal">Trusted by Industry Leaders</h2>
+                <p class="section-subtitle reveal">We deliver results that drive real-world impact and technological breakthroughs.</p>
+                <div class="impact-grid reveal">
+                    <div class="impact-stat">
+                        <span class="stat-number">500M+</span>
+                        <span class="stat-label">Annotated Data Points</span>
+                    </div>
+                     <div class="impact-stat">
+                        <span class="stat-number">Fortune 500</span>
+                        <span class="stat-label">Trusted Partners</span>
+                    </div>
+                     <div class="impact-stat">
+                        <span class="stat-number">99.5%</span>
+                        <span class="stat-label">Quality Accuracy</span>
+                    </div>
+                     <div class="impact-stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Ethical AI Commitment</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta-footer" style="background-color: var(--color-primary); color: #fff; padding: 80px 0;">
+            <div class="container text-center reveal">
+                <h2 style="color: #fff;">See How We Scale AI Globally</h2>
+                <p style="max-width: 600px; margin: 1rem auto 2rem; opacity: 0.9;">Let's discuss how our human-in-the-loop solutions can accelerate your AI development.</p>
+                <a href="contact.html" class="cta-button">Contact Our Team</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Application Form Popup Modal -->
+    <div id="application-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-modal-btn">×</button>
+            <header class="form-header">
+                <h1>Join Our Team</h1>
+                <p>Help us redefine the future of technology and human empowerment.</p>
+            </header>
+
+            <!-- ========================================================= -->
+            <!-- CRITICAL FIX: The form tag NOW has id="application-form"  -->
+            <!-- This allows the JavaScript to find and manage it.         -->
+            <!-- ========================================================= -->
+            <form id="application-form" class="application-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="firstName" placeholder="e.g., Jane" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="lastName" placeholder="e.g., Doe" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="jane.doe@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" placeholder="25" min="18" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="degree">Degree</label>
+                        <input type="text" id="degree" name="degree" placeholder="e.g., B.S. in Computer Science" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Project Applied For</label>
+                        <select id="project" name="project" required>
+                            <option value="" disabled selected>Select a project...</option>
+                            <option value="Data Annotator">Data Annotator</option>
+                            <option value="AI Training Specialist">AI Training Specialist</option>
+                            <option value="NLP Engineer">NLP Engineer</option>
+                            <option value="AI Quality Assurance">AI Quality Assurance</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="experience">Relevant Job Experience</label>
+                    <textarea id="experience" name="experience" rows="4" placeholder="Describe your past roles..."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <label for="resume-link">Resume Link</label>
+                    <input type="url" id="resume-link" name="resumeLink" placeholder="https://linkedin.com/in/..." required>
+                </div>
+                <fieldset class="form-group full-width">
+                    <legend>Available Time Range</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="start-time">Start Time</label>
+                            <input type="time" id="start-time" name="startTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end-time">End Time</label>
+                            <input type="time" id="end-time" name="endTime" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit" id="submit-btn" class="submit-btn">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid-container">
+            <div class="footer-col footer-col-1">
+                 <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Lifewood Logo" class="footer-logo-img">
+                    </a>
+                </div>
+                <a href="contact.html" class="footer-contact-button">
+                    Contact us <span class="dropdown-arrow">▼</span>
+                </a>
+            </div>
+            <div class="footer-col footer-col-2">
+                <h4 class="footer-heading">MENU</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-3">
+                <h4 class="footer-heading">LANGUAGE</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="switchLanguage('en')">English</a></li>
+                    <li><a href="#" onclick="switchLanguage('zh')">Chinese</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-4">
+                <h4 class="footer-heading">FOLLOW US</h4>
+                <a href="https://www.youtube.com/@LifewoodDataTechnology/videos" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                    <div class="social-icon-box">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 16.5V7.5L16 12L10 16.5Z"/>
+                        </svg>
+                    </div>
+                    <div class="social-text">
+                        <span>LIFEWOOD</span>
+                        <span>YOUTUBE CHANNEL</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+     <script>
+        // This script handles showing the success notification after a redirect
+        document.addEventListener('DOMContentLoaded', () => {
+            const notification = document.getElementById('success-notification');
+            if (notification && sessionStorage.getItem('applicationSubmitted') === 'true') {
+                notification.classList.remove('hidden');
+                sessionStorage.removeItem('applicationSubmitted');
+                setTimeout(() => notification.classList.add('hidden'), 5000);
+                notification.querySelector('.close-btn')?.addEventListener('click', () => notification.classList.add('hidden'));
+            }
+        });
+    </script>
+
+    <!-- Your existing scripts for general site functionality (like opening the modal, animations, etc.) -->
+    <script src="script.js"></script>
+    <script src="language.js"></script>
+
+    <!-- =================================================================== -->
+    <!-- NEW: This script loads the form submission logic for the modal.   -->
+    <!-- It must be a module to use Firebase imports.                    -->
+    <!-- =================================================================== -->
+    <script type="module" src="system/form-handler.js"></script>
+    
+
+</body>
+</html>
